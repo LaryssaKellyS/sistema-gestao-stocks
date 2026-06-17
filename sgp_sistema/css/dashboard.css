@@ -1,0 +1,374 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS / RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO SUPERIOR (NAVBAR)
+   ========================================================================== */
+.navbar {
+    background-color: #1e293b;
+    color: #ffffff;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 1000;
+    border-bottom: 3px solid #3b82f6;
+}
+
+.navbar .logo {
+    float: left;
+    line-height: 57px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar .usuario-info {
+    float: right;
+    line-height: 57px;
+    font-size: 14px;
+}
+
+.navbar .badge-nivel {
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    margin-right: 15px;
+}
+
+.navbar .btn-sair {
+    background-color: #ef4444;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.navbar .btn-sair:hover {
+    background-color: #dc2626;
+}
+
+/* ==========================================================================
+   3. MENU LATERAL (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    background-color: #0f172a;
+    width: 240px;
+    position: fixed;
+    top: 60px;
+    bottom: 40px; /* Deixa espaço para o rodapé */
+    left: 0;
+    padding-top: 20px;
+    z-index: 999;
+}
+
+.sidebar a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-left-color: #3b82f6;
+}
+
+/* ==========================================================================
+   4. ÁREA DE CONTEÚDO PRINCIPAL
+   ========================================================================== */
+.conteudo-principal {
+    margin-top: 60px;     /* Empurra para baixo do cabeçalho */
+    margin-left: 240px;   /* Empurra para o lado da sidebar */
+    padding: 40px;
+    min-height: calc(100vh - 100px);
+}
+
+.conteudo-principal h2 {
+    color: #1e293b;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.conteudo-principal p {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   5. COMPONENTES: PAINEL DE ALERTAS (DASHBOARD)
+   ========================================================================== */
+.painel-alertas {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card-alerta {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Alerta de Stock Mínimo Crítico */
+.card-alerta.critico {
+    border-left: 6px solid #ef4444;
+}
+
+.card-alerta.critico h3 {
+    color: #b91c1c;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   6. RODAPÉ GLOBAL (FOOTER)
+   ========================================================================== */
+.rodape-global {
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-top: 1px solid #334155;
+}
+/* ==========================================================================
+   7. FORMULÁRIO DE CADASTRO DE PRODUTOS
+   ========================================================================== */
+.form-industrial {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.linha-form {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.coluna-4 { flex: 1; }
+.coluna-6 { flex: 1; }
+
+.form-industrial label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #475569;
+    font-size: 14px;
+}
+
+.form-industrial input, .form-industrial select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+.form-industrial input:focus, .form-industrial select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-salvar-material {
+    background-color: #10b981; /* Verde Sucesso */
+    color: #ffffff;
+    border: none;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-salvar-material:hover {
+    background-color: #059669;
+}
+
+.alerta-sucesso {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border: 1px solid #badbcc;
+}
+
+.alerta-erro {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border: 1px solid #f5c2c7;
+}
+/* ==========================================================================
+   8. TABELAS INDUSTRIAIS E ALERTAS DO DASHBOARD
+   ========================================================================== */
+.titulo-secao-alerta {
+    color: #b91c1c;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.tabela-industrial {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.tabela-industrial th, .tabela-industrial td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tabela-industrial th {
+    background-color: #1e293b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.tabela-industrial tr {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Cor especial para a linha do produto em falta */
+.linha-critica {
+    background-color: #fff5f5;
+}
+
+.linha-critica:hover {
+    background-color: #fee2e2;
+}
+
+.txt-perigo {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.badge-perigo {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Alerta de Sucesso/Seguro */
+.card-alerta.safe {
+    border-left: 6px solid #10b981;
+}
+
+.card-alerta.safe h3 {
+    color: #065f46;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+/* ==========================================================================
+   9. ESTRUTURA DE CARTÕES DE STATUS (STYLE MOCKUP)
+   ========================================================================== */
+.container-cartoes {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.card-status {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.card-icone {
+    font-size: 28px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cores de fundo suaves para as esferas dos ícones */
+.icone-perigo { background-color: #fef2f2; }
+.icone-aviso { background-color: #fffbeb; }
+.icone-sucesso { background-color: #f0fdf4; }
+
+.card-conteudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-titulo {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-numero {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+}
